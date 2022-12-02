@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+
+<p> Enter your numbers and press the button with necessary 
+    arithmetical operation symbol.</p>
+
+    <input type="text" id="val1" value="0">
+    <button onclick="add(1)">+</button>
+    <button onclick="add(2)">-</button>
+    <button onclick="add(3)">*</button>
+    <button onclick="add(4)">/</button>
+    <button onclick="add(5)">^</button>
+    <button id="Button1" onclick="add(6)">%</button>
+    <input type="text" id="val2" value="0">
+    =
+    <input type="text" id="result" readonly value="0">
+
+    <script>
+        function add(arg) {
+            val1 = +document.getElementById("val1").value;
+            val2 = +document.getElementById("val2").value;
+
+            switch (arg) {
+                case 1:
+                    result = val1 + val2;
+                    break;
+                case 2:
+                    result = val1 - val2;
+                    break;
+                case 3:
+                    result = val1 * val2;
+                    break;
+                case 4:
+                    result = (val2 != 0) ? result = val1 / val2 : result = "ERROR!";
+                    break;
+                case 5:
+                    result = val1 ** val2;
+                    break;
+                default:
+                    result = (val2 != 0) ? result = val1 % val2 : result = "ERROR!";
+                    break;
+            }
+            document.getElementById("result").value = result;
+        }
+    </script>
+
+</body>
+
+</html>
